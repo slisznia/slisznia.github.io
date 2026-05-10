@@ -1,0 +1,1097 @@
+{
+	"schemaVersion": 1,
+	"contentVersion": "0.1.0",
+	"metadata": {
+		"title": "Sławomir Liszniański portfolio data",
+		"description": "Structured source data for a projection-based consultant portfolio.",
+		"lastUpdated": "2026-05-10",
+		"notes": [
+			"This file is intended to be the source of truth for a single-page portfolio app.",
+			"Projects are written once and re-used through projections, domains, capabilities, and tags.",
+			"Capabilities describe what a project proves; domains describe where the work happened."
+		]
+	},
+	"person": {
+		"name": "Sławomir Liszniański",
+		"headline": "Independent systems builder",
+		"location": "Polson, Montana",
+		"status": "Self-employed; open to selective consulting",
+		"shortBio": "I design, build, debug, and improve complex systems across software, infrastructure, machines, buildings, field hardware, vehicles, and aviation.",
+		"positioning": "I help organizations design and fix systems where correctness, reliability, maintainability, and real-world constraints matter.",
+		"preferredEngagementStyle": [
+			"Architecture review",
+			"Technical due diligence",
+			"Prototype design",
+			"System redesign planning",
+			"Cross-disciplinary problem solving",
+			"Independent consulting"
+		]
+	},
+	"site": {
+		"defaultProjection": "cross-disciplinary-systems-builder",
+		"primaryNavigation": [
+			{
+				"label": "Overview",
+				"route": "/"
+			},
+			{
+				"label": "Software",
+				"route": "/software"
+			},
+			{
+				"label": "Language design",
+				"route": "/language-design"
+			},
+			{
+				"label": "Embedded",
+				"route": "/embedded"
+			},
+			{
+				"label": "Physical systems",
+				"route": "/physical-systems"
+			},
+			{
+				"label": "Off-grid",
+				"route": "/off-grid"
+			},
+			{
+				"label": "Projects",
+				"route": "/projects"
+			}
+		],
+		"hero": {
+			"title": "I build complex systems where failure modes matter.",
+			"body": "My work looks broad at first glance: software systems, aircraft building, off-grid infrastructure, vehicles, embedded devices, financial systems, and programming language design. The common thread is systems thinking: understanding how parts interact, where things fail, and how to build systems that survive real use.",
+			"tags": [
+				"Systems architecture",
+				"Financial correctness",
+				"Distributed workflows",
+				"Embedded devices",
+				"Aviation",
+				"Off-grid infrastructure",
+				"Fabrication",
+				"Failure-mode thinking"
+			]
+		}
+	},
+	"projections": [
+		{
+			"id": "cross-disciplinary-systems-builder",
+			"title": "Cross-disciplinary systems builder",
+			"headline": "Software, infrastructure, machines, buildings, and field systems tied together by systems thinking.",
+			"summary": "A broad view for people who want the full picture: I work across software, electronics, aviation, vehicles, power, water, buildings, and operations.",
+			"route": "/",
+			"priority": 1,
+			"tagQuery": {
+				"domainsAny": [],
+				"capabilitiesAny": [
+					"systems-integration",
+					"failure-mode-analysis",
+					"diagnostic-thinking",
+					"long-horizon-project-execution",
+					"maintainability",
+					"documentation-discipline"
+				],
+				"projectTagsAny": []
+			}
+		},
+		{
+			"id": "software-systems-architect",
+			"title": "Software systems architect",
+			"headline": "Backend architecture, distributed workflows, financial correctness, databases, and frontend modernization.",
+			"summary": "For organizations needing reliable software systems, clear architecture, correctness-focused design, and pragmatic implementation strategy.",
+			"route": "/software",
+			"priority": 2,
+			"tagQuery": {
+				"domainsAny": [
+					"software",
+					"financial-systems"
+				],
+				"capabilitiesAny": [
+					"system-architecture",
+					"distributed-workflows",
+					"financial-correctness",
+					"database-design",
+					"frontend-architecture",
+					"async-request-processing"
+				],
+				"projectTagsAny": [
+					"Java",
+					"MariaDB",
+					"Vue",
+					"Docker",
+					"MinIO",
+					"S3-compatible-storage"
+				]
+			}
+		},
+		{
+			"id": "programming-language-designer",
+			"title": "Programming language designer",
+			"headline": "Syntax, type systems, packages, traits, compile-time rules, and runtime semantics.",
+			"summary": "For people interested in language/runtime design, compiler-facing decisions, package identity, generic systems, trait resolution, and semantics that stay understandable.",
+			"route": "/language-design",
+			"priority": 3,
+			"tagQuery": {
+				"domainsAny": [
+					"programming-language-design"
+				],
+				"capabilitiesAny": [
+					"language-semantics",
+					"type-system-design",
+					"package-system-design",
+					"concurrency-design",
+					"regression-test-thinking"
+				],
+				"projectTagsAny": [
+					"Drift",
+					"traits",
+					"packages",
+					"compiler-design"
+				]
+			}
+		},
+		{
+			"id": "embedded-field-systems-builder",
+			"title": "Embedded and field systems builder",
+			"headline": "Sensors, BLE devices, diagnostics, automation, and hardware/software integration.",
+			"summary": "For systems that connect software to physical equipment, field conditions, sensors, diagnostics, and practical electronics.",
+			"route": "/embedded",
+			"priority": 4,
+			"tagQuery": {
+				"domainsAny": [
+					"embedded",
+					"field-systems",
+					"avionics",
+					"vehicle-diagnostics"
+				],
+				"capabilitiesAny": [
+					"sensor-calibration",
+					"hardware-software-integration",
+					"diagnostic-thinking",
+					"canbus-debugging",
+					"field-observability"
+				],
+				"projectTagsAny": [
+					"ESP32",
+					"MicroPython",
+					"BLE",
+					"CAN bus"
+				]
+			}
+		},
+		{
+			"id": "physical-systems-builder",
+			"title": "Physical systems builder",
+			"headline": "Aircraft, vehicles, fabrication, electrical systems, hydronics, workshops, and real-world infrastructure.",
+			"summary": "For projects involving mechanical systems, fabrication, diagnostics, construction constraints, energy, water, serviceability, and practical execution.",
+			"route": "/physical-systems",
+			"priority": 5,
+			"tagQuery": {
+				"domainsAny": [
+					"aviation",
+					"vehicles",
+					"construction",
+					"facility-systems",
+					"hydronic-systems",
+					"electrical-systems"
+				],
+				"capabilitiesAny": [
+					"metal-fabrication",
+					"systems-integration",
+					"repair-planning",
+					"mechanical-systems",
+					"electrical-planning",
+					"safety-critical-workmanship"
+				],
+				"projectTagsAny": []
+			}
+		},
+		{
+			"id": "off-grid-infrastructure-designer",
+			"title": "Off-grid and infrastructure systems designer",
+			"headline": "Solar, wells, water, heating, power distribution, serviceability, and independent property systems.",
+			"summary": "For infrastructure projects where power, water, heat, buildings, maintenance, and long-term independence must work together.",
+			"route": "/off-grid",
+			"priority": 6,
+			"tagQuery": {
+				"domainsAny": [
+					"off-grid",
+					"solar",
+					"water-systems",
+					"wells",
+					"construction",
+					"facility-systems"
+				],
+				"capabilitiesAny": [
+					"infrastructure-planning",
+					"maintainability",
+					"electrical-planning",
+					"water-system-design",
+					"energy-system-design",
+					"failure-mode-analysis"
+				],
+				"projectTagsAny": []
+			}
+		}
+	],
+	"domains": [
+		{
+			"id": "software",
+			"label": "Software",
+			"description": "Backend, frontend, databases, distributed systems, architecture, and product design."
+		},
+		{
+			"id": "financial-systems",
+			"label": "Financial systems",
+			"description": "Ledger, payments, receivables, deferred revenue, auditability, and transaction correctness."
+		},
+		{
+			"id": "programming-language-design",
+			"label": "Programming language design",
+			"description": "Language syntax, type systems, package identity, traits, and compile-time semantics."
+		},
+		{
+			"id": "embedded",
+			"label": "Embedded systems",
+			"description": "Microcontrollers, sensors, BLE interfaces, local storage, and field devices."
+		},
+		{
+			"id": "field-systems",
+			"label": "Field systems",
+			"description": "Systems designed for practical use outside a clean lab environment."
+		},
+		{
+			"id": "aviation",
+			"label": "Aviation",
+			"description": "Aircraft building, avionics, wiring, systems integration, inspection, and safety discipline."
+		},
+		{
+			"id": "avionics",
+			"label": "Avionics",
+			"description": "Aircraft electrical, data-bus, instrument, and integration work."
+		},
+		{
+			"id": "vehicles",
+			"label": "Vehicles",
+			"description": "Automotive, diesel, repair planning, diagnostics, transformations, and mechanical systems."
+		},
+		{
+			"id": "vehicle-diagnostics",
+			"label": "Vehicle diagnostics",
+			"description": "Finding root causes across mechanical, electrical, sensor, control, and software symptoms."
+		},
+		{
+			"id": "solar",
+			"label": "Solar",
+			"description": "Photovoltaic layout, mounting, power planning, load considerations, and infrastructure integration."
+		},
+		{
+			"id": "off-grid",
+			"label": "Off-grid infrastructure",
+			"description": "Independent power, water, heating, maintenance, and property systems."
+		},
+		{
+			"id": "water-systems",
+			"label": "Water systems",
+			"description": "Wells, tanks, pumps, boosters, monitoring, water storage, and serviceability."
+		},
+		{
+			"id": "wells",
+			"label": "Wells",
+			"description": "Well-related water supply and property infrastructure."
+		},
+		{
+			"id": "construction",
+			"label": "Construction",
+			"description": "Building systems, concrete, framing, electrical routing, plumbing, mechanical planning, and code-aware decisions."
+		},
+		{
+			"id": "facility-systems",
+			"label": "Facility systems",
+			"description": "Hangars, workshops, shops, mechanical rooms, utilities, workspaces, and maintainable building infrastructure."
+		},
+		{
+			"id": "hydronic-systems",
+			"label": "Hydronic systems",
+			"description": "Radiant heating, manifolds, circulators, loops, pumps, purge points, and serviceable heat distribution."
+		},
+		{
+			"id": "electrical-systems",
+			"label": "Electrical systems",
+			"description": "Power distribution, wiring, panels, subpanels, switching, controls, and electrical troubleshooting."
+		}
+	],
+	"capabilities": [
+		{
+			"id": "systems-integration",
+			"label": "Systems integration",
+			"description": "Combining mechanical, electrical, software, operational, safety, and serviceability constraints into working systems."
+		},
+		{
+			"id": "system-architecture",
+			"label": "System architecture",
+			"description": "Designing software and infrastructure around correctness, durability, reliability, and maintainability."
+		},
+		{
+			"id": "distributed-workflows",
+			"label": "Distributed workflows",
+			"description": "Designing queue-backed, asynchronous, failure-tolerant workflows with clear request tracking and completion semantics."
+		},
+		{
+			"id": "financial-correctness",
+			"label": "Financial correctness",
+			"description": "Designing transaction flows where balances, auditability, ordering, journal entries, and invariants matter."
+		},
+		{
+			"id": "database-design",
+			"label": "Database design",
+			"description": "Working with relational data, MariaDB, stored procedures, query boundaries, and business data correctness."
+		},
+		{
+			"id": "frontend-architecture",
+			"label": "Frontend architecture",
+			"description": "Designing maintainable single-page applications, component boundaries, state management, caching, and data-heavy UI."
+		},
+		{
+			"id": "async-request-processing",
+			"label": "Asynchronous request processing",
+			"description": "Handling HTTP 202 workflows, request IDs, polling, status tracking, and dataset invalidation."
+		},
+		{
+			"id": "language-semantics",
+			"label": "Language semantics",
+			"description": "Designing clear rules for expressions, functions, lambdas, casts, copying, packages, and compiler behavior."
+		},
+		{
+			"id": "type-system-design",
+			"label": "Type system design",
+			"description": "Reasoning about type identity, traits, generics, receiver lookup, aliases, canonicalization, and safe composition."
+		},
+		{
+			"id": "package-system-design",
+			"label": "Package system design",
+			"description": "Designing package identity, versioning, dependency resolution, namespace trust, local caches, and repository discovery."
+		},
+		{
+			"id": "concurrency-design",
+			"label": "Concurrency design",
+			"description": "Designing synchronization policies, fairness behavior, lock variants, batching, writer priority, and starvation tradeoffs."
+		},
+		{
+			"id": "regression-test-thinking",
+			"label": "Regression-test thinking",
+			"description": "Turning design rules and past bugs into focused tests that prevent old mistakes from returning."
+		},
+		{
+			"id": "hardware-software-integration",
+			"label": "Hardware/software integration",
+			"description": "Connecting software behavior with sensors, wiring, devices, controllers, diagnostics, and physical-world constraints."
+		},
+		{
+			"id": "sensor-calibration",
+			"label": "Sensor calibration",
+			"description": "Mapping raw sensor behavior to usable values, statistics, thresholds, and field-readable output."
+		},
+		{
+			"id": "field-observability",
+			"label": "Field observability",
+			"description": "Making systems report useful status, history, faults, samples, and diagnostics in compact forms."
+		},
+		{
+			"id": "diagnostic-thinking",
+			"label": "Diagnostic thinking",
+			"description": "Finding root causes across systems where symptoms may come from multiple interacting layers."
+		},
+		{
+			"id": "canbus-debugging",
+			"label": "CAN bus and data-bus debugging",
+			"description": "Troubleshooting data-bus style systems involving wiring, termination, devices, protocol behavior, and configuration."
+		},
+		{
+			"id": "failure-mode-analysis",
+			"label": "Failure-mode analysis",
+			"description": "Asking what can fail, how it fails, what survives, and how the operator detects and recovers from it."
+		},
+		{
+			"id": "maintainability",
+			"label": "Maintainability",
+			"description": "Designing systems so future inspection, service, replacement, and operation remain practical."
+		},
+		{
+			"id": "documentation-discipline",
+			"label": "Documentation discipline",
+			"description": "Maintaining structure, notes, design records, and decision history so complex work stays understandable."
+		},
+		{
+			"id": "long-horizon-project-execution",
+			"label": "Long-horizon project execution",
+			"description": "Sustaining complex work over months or years without losing system context or decision continuity."
+		},
+		{
+			"id": "metal-fabrication",
+			"label": "Metal fabrication",
+			"description": "Cutting, fitting, drilling, fastening, welding-aware planning, alignment, inspection, and fabrication discipline."
+		},
+		{
+			"id": "safety-critical-workmanship",
+			"label": "Safety-critical workmanship",
+			"description": "Working carefully where mistakes have real safety consequences and disciplined process matters."
+		},
+		{
+			"id": "mechanical-systems",
+			"label": "Mechanical systems",
+			"description": "Understanding machines, structures, linkages, routing, service access, forces, wear, and practical assembly."
+		},
+		{
+			"id": "electrical-planning",
+			"label": "Electrical planning",
+			"description": "Planning circuits, panels, feeds, switching, controls, wire routing, and maintainable power distribution."
+		},
+		{
+			"id": "water-system-design",
+			"label": "Water system design",
+			"description": "Designing water supply, storage, pumping, pressure, monitoring, treatment, and serviceable layouts."
+		},
+		{
+			"id": "energy-system-design",
+			"label": "Energy system design",
+			"description": "Planning solar, power distribution, backup, loads, mounting, and operational constraints."
+		},
+		{
+			"id": "infrastructure-planning",
+			"label": "Infrastructure planning",
+			"description": "Designing property and facility systems around durability, access, cost, maintenance, and staged execution."
+		},
+		{
+			"id": "repair-planning",
+			"label": "Repair planning",
+			"description": "Assessing damage, sequencing repairs, estimating risk, identifying dependencies, and deciding what is worth fixing."
+		}
+	],
+	"projects": [
+		{
+			"id": "s3-compatible-financial-workflow-architecture",
+			"title": "S3-compatible financial workflow architecture",
+			"status": "Designed / in progress",
+			"timeframe": "",
+			"summary": "A durable asynchronous processing architecture for customer-scoped financial and business workflows.",
+			"problem": "Incoming requests needed to survive app downtime, retries, and spot-instance interruptions while preserving correct ledger ordering per customer.",
+			"solution": "Separated stateless request intake from durable S3-compatible queues, with ordered and concurrent work classes scoped by customer.",
+			"domains": [
+				"software",
+				"financial-systems"
+			],
+			"capabilities": [
+				"system-architecture",
+				"distributed-workflows",
+				"financial-correctness",
+				"failure-mode-analysis",
+				"async-request-processing",
+				"maintainability"
+			],
+			"tags": [
+				"Java",
+				"MariaDB",
+				"S3-compatible-storage",
+				"MinIO",
+				"Docker",
+				"HTTP 202",
+				"request IDs",
+				"spot instances"
+			],
+			"evidence": [
+				{
+					"capability": "distributed-workflows",
+					"detail": "Designed queue paths with pending, processing, done, and failed states for ordered and concurrent workloads."
+				},
+				{
+					"capability": "financial-correctness",
+					"detail": "Preserved per-customer serialization for ledger-affecting operations while allowing unrelated work to run concurrently."
+				},
+				{
+					"capability": "failure-mode-analysis",
+					"detail": "Accounted for downtime, retry metadata, stalled processing, and spot-instance interruption behavior."
+				},
+				{
+					"capability": "maintainability",
+					"detail": "Kept the design compatible with S3 and MinIO so the system can be tested locally and remain cloud-agnostic."
+				}
+			],
+			"projectionHighlights": {
+				"software-systems-architect": [
+					"Durable queue-backed backend architecture with clear request lifecycle.",
+					"Customer-scoped serialization for financial correctness without blocking unrelated customers."
+				],
+				"cross-disciplinary-systems-builder": [
+					"Shows failure-mode thinking across software, infrastructure, customer operations, and accounting correctness."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "gaap-style-ledger-and-payment-flows",
+			"title": "GAAP-style ledger and payment flow design",
+			"status": "Designed / implemented in stages",
+			"timeframe": "",
+			"summary": "Financial transaction design involving wallet prepayments, deferred revenue, receivables, hybrid payments, voids, tracked returns, and bad debt write-offs.",
+			"problem": "Payment and purchase workflows needed to produce correct journal behavior across cash, receivables, liabilities, clearing accounts, and customer wallets.",
+			"solution": "Modeled transaction flows around account-balance invariants, deferred revenue handling, receivable charging rules, and serialized ledger modifications.",
+			"domains": [
+				"software",
+				"financial-systems"
+			],
+			"capabilities": [
+				"financial-correctness",
+				"database-design",
+				"system-architecture",
+				"regression-test-thinking",
+				"documentation-discipline"
+			],
+			"tags": [
+				"General Ledger",
+				"GAAP",
+				"wallets",
+				"deferred revenue",
+				"receivables",
+				"stored procedures",
+				"Java",
+				"MariaDB"
+			],
+			"evidence": [
+				{
+					"capability": "financial-correctness",
+					"detail": "Designed flows where deferred revenue is consumed before receivables are charged, avoiding incorrect unconditional AR debits."
+				},
+				{
+					"capability": "database-design",
+					"detail": "Designed Java-side orchestration that invokes stored procedures while preserving business-level transaction semantics."
+				},
+				{
+					"capability": "documentation-discipline",
+					"detail": "Captured real-life scenarios such as wallet prepayments, hybrid payments, overpayments, voids, tracked returns, and bad debt write-offs."
+				}
+			],
+			"projectionHighlights": {
+				"software-systems-architect": [
+					"Strong example of business rules becoming auditable backend behavior.",
+					"Shows exactness around accounting invariants rather than generic CRUD."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "vue-business-app-modernization",
+			"title": "Vue business application modernization",
+			"status": "Planned architecture",
+			"timeframe": "",
+			"summary": "Modernization plan for a data-heavy business web application using Vue, custom UI abstractions, AG Grid, Pinia, Vue Router, TanStack Query, Tailwind CSS, and DaisyUI.",
+			"problem": "An older frontend needed a maintainable migration path without locking the product too tightly to a specific UI framework.",
+			"solution": "Designed a Vue architecture with project-local Node management, reusable UI primitives, data-grid support, persistent query cache, and cross-tab invalidation.",
+			"domains": [
+				"software"
+			],
+			"capabilities": [
+				"frontend-architecture",
+				"system-architecture",
+				"async-request-processing",
+				"maintainability"
+			],
+			"tags": [
+				"Vue",
+				"AG Grid",
+				"Pinia",
+				"Vue Router",
+				"TanStack Query",
+				"Tailwind CSS",
+				"DaisyUI",
+				"Volta",
+				"BroadcastChannel"
+			],
+			"evidence": [
+				{
+					"capability": "frontend-architecture",
+					"detail": "Designed custom UI component abstractions so the underlying UI framework can be swapped with limited impact."
+				},
+				{
+					"capability": "async-request-processing",
+					"detail": "Planned frontend handling for HTTP 202 updates, request ID polling, dataset invalidation, and cross-tab refresh behavior."
+				},
+				{
+					"capability": "maintainability",
+					"detail": "Started with a simple client-side data model and reserved server-side complexity for actual performance needs."
+				}
+			],
+			"projectionHighlights": {
+				"software-systems-architect": [
+					"Pragmatic modernization strategy for a real business application.",
+					"Balances data-heavy UI, caching, async backend updates, and long-term component flexibility."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "drift-programming-language-design",
+			"title": "Programming language and package system design",
+			"status": "Active design",
+			"timeframe": "",
+			"summary": "Design work around language syntax, lambda behavior, package identity, namespace trust, trait resolution, Copy/Clone semantics, explicit casts, and compiler-facing metadata.",
+			"problem": "A language and package ecosystem needs rules that remain predictable across packages, generics, traits, aliases, visibility, and dependency boundaries.",
+			"solution": "Developed decisions around package-scoped identity, trusted namespaces, local dependency caches, single-version package resolution, explicit cast syntax, lambda syntax, receiver lookup, and regression tests.",
+			"domains": [
+				"programming-language-design",
+				"software"
+			],
+			"capabilities": [
+				"language-semantics",
+				"type-system-design",
+				"package-system-design",
+				"concurrency-design",
+				"regression-test-thinking",
+				"documentation-discipline"
+			],
+			"tags": [
+				"Drift",
+				"compiler-design",
+				"traits",
+				"package identity",
+				"TOFU",
+				"dependency resolution",
+				"Copy semantics",
+				"lambda syntax"
+			],
+			"evidence": [
+				{
+					"capability": "package-system-design",
+					"detail": "Defined drift-sources.json as the canonical repository directory and kept project-local dependency isolation as the default."
+				},
+				{
+					"capability": "type-system-design",
+					"detail": "Worked through cross-package trait identity, visibility, alias canonicalization, metadata requirements, and deduplication rules."
+				},
+				{
+					"capability": "language-semantics",
+					"detail": "Chose explicit function-form casts, keyword-oriented syntax, explicit receiver lookup, and cheap-only Copy semantics."
+				},
+				{
+					"capability": "regression-test-thinking",
+					"detail": "Turns design decisions into concrete tests to guard against semantic drift."
+				}
+			],
+			"projectionHighlights": {
+				"programming-language-designer": [
+					"Shows deep design work on language semantics, package systems, visibility, and trait resolution.",
+					"Emphasizes simple, explicit rules over clever but fragile syntax."
+				],
+				"software-systems-architect": [
+					"Demonstrates architecture-level thinking about versioning, dependency isolation, trust, metadata, and compatibility."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "esp32-water-level-monitor",
+			"title": "ESP32 water level monitoring device",
+			"status": "Designed / implemented in stages",
+			"timeframe": "",
+			"summary": "A MicroPython ESP32 field device for monitoring tank water level through calibrated resistance readings, BLE command access, time-series history, refill detection, and compact JSON reporting.",
+			"problem": "A field water system needed simple local observability without relying on a complex external service.",
+			"solution": "Designed sensor calibration, rolling windows, refill detection thresholds, persistent sample storage, partial-window reporting, and BLE CLI commands with partial matching.",
+			"domains": [
+				"embedded",
+				"field-systems",
+				"water-systems"
+			],
+			"capabilities": [
+				"hardware-software-integration",
+				"sensor-calibration",
+				"field-observability",
+				"diagnostic-thinking",
+				"water-system-design",
+				"maintainability"
+			],
+			"tags": [
+				"ESP32",
+				"MicroPython",
+				"BLE",
+				"water tank",
+				"sensor calibration",
+				"JSON",
+				"local storage",
+				"LM2596"
+			],
+			"evidence": [
+				{
+					"capability": "sensor-calibration",
+					"detail": "Calibrated resistance range around empty/full readings and exposed the sensor constants in reported metadata."
+				},
+				{
+					"capability": "field-observability",
+					"detail": "Designed compact JSON summaries for 24-hour, 3-day, 7-day, and 30-day windows with refill counts and interval statistics."
+				},
+				{
+					"capability": "hardware-software-integration",
+					"detail": "Combined ESP32, MicroPython, BLE access, local storage, and buck-converter power planning."
+				},
+				{
+					"capability": "maintainability",
+					"detail": "Added simulation/test-populate behavior that does not overwrite real persistent data."
+				}
+			],
+			"projectionHighlights": {
+				"embedded-field-systems-builder": [
+					"Practical embedded field device with calibration, logging, BLE interaction, and compact operator-readable output.",
+					"Shows hardware/software integration around a real water-system need."
+				],
+				"off-grid-infrastructure-designer": [
+					"Connects water infrastructure with monitoring, historical visibility, and low-maintenance field behavior."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "rv10-experimental-aircraft-build",
+			"title": "RV-10 experimental aircraft build",
+			"status": "In progress",
+			"timeframe": "",
+			"summary": "Experimental aircraft build requiring structural assembly, metal fabrication, systems integration, wiring, avionics/data-bus troubleshooting, upholstery/interior work, documentation, and safety-critical workmanship.",
+			"problem": "An aircraft build is a long-horizon systems project where structure, controls, fuel, electrical, avionics, interior, inspection, documentation, and workmanship all affect the final result.",
+			"solution": "Approach the build as an integrated system: controlled workmanship, careful documentation, staged assembly, inspection mindset, and debugging across mechanical and electrical layers.",
+			"domains": [
+				"aviation",
+				"avionics",
+				"electrical-systems",
+				"field-systems"
+			],
+			"capabilities": [
+				"systems-integration",
+				"metal-fabrication",
+				"safety-critical-workmanship",
+				"canbus-debugging",
+				"diagnostic-thinking",
+				"documentation-discipline",
+				"long-horizon-project-execution",
+				"mechanical-systems",
+				"electrical-planning"
+			],
+			"tags": [
+				"RV-10",
+				"experimental aircraft",
+				"airframe",
+				"avionics",
+				"CAN bus",
+				"wiring",
+				"fuel systems",
+				"upholstery",
+				"inspection",
+				"fabrication"
+			],
+			"evidence": [
+				{
+					"capability": "systems-integration",
+					"detail": "Integrates airframe, controls, fuel, electrical, avionics, interior, tooling, inspection, and documentation into one working aircraft."
+				},
+				{
+					"capability": "metal-fabrication",
+					"detail": "Requires precise fitting, drilling, fastening, alignment, repeatability, and inspection discipline."
+				},
+				{
+					"capability": "canbus-debugging",
+					"detail": "Involves avionics/data-bus troubleshooting where wiring, termination, configuration, and device behavior interact."
+				},
+				{
+					"capability": "long-horizon-project-execution",
+					"detail": "Demonstrates the ability to sustain a complex multi-stage project without losing the relationship between decisions and final operation."
+				},
+				{
+					"capability": "safety-critical-workmanship",
+					"detail": "Aircraft work forces careful process because mistakes have direct safety implications."
+				}
+			],
+			"projectionHighlights": {
+				"physical-systems-builder": [
+					"Metal fabrication, fitment, routing, assembly, wiring, inspection, and serviceability in a safety-critical physical system.",
+					"Shows practical execution across mechanical, electrical, interior, and documentation work."
+				],
+				"embedded-field-systems-builder": [
+					"Avionics/data-bus debugging connects wiring, protocol behavior, device configuration, and physical installation details.",
+					"Shows troubleshooting across hardware, software-like configuration, and mechanical routing."
+				],
+				"cross-disciplinary-systems-builder": [
+					"A flagship example of one project acting as a soup of capabilities: fabrication, wiring, debugging, documentation, safety, and long-horizon execution."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "off-grid-property-infrastructure",
+			"title": "Off-grid property infrastructure",
+			"status": "In progress / ongoing planning",
+			"timeframe": "",
+			"summary": "Planning and building independent property infrastructure involving solar, wells, water storage, pumps, heating, power distribution, buildings, and serviceability.",
+			"problem": "Independent property systems need power, water, heating, monitoring, and maintenance to work together rather than as disconnected purchases.",
+			"solution": "Treat the property as an integrated infrastructure system with attention to load planning, water pressure, storage, heating zones, access, future maintenance, and staged upgrades.",
+			"domains": [
+				"off-grid",
+				"solar",
+				"water-systems",
+				"wells",
+				"construction",
+				"facility-systems",
+				"electrical-systems",
+				"hydronic-systems"
+			],
+			"capabilities": [
+				"infrastructure-planning",
+				"energy-system-design",
+				"water-system-design",
+				"electrical-planning",
+				"maintainability",
+				"failure-mode-analysis",
+				"systems-integration"
+			],
+			"tags": [
+				"solar",
+				"wells",
+				"water storage",
+				"booster pumps",
+				"hydronic heating",
+				"subpanels",
+				"serviceability",
+				"off-grid"
+			],
+			"evidence": [
+				{
+					"capability": "systems-integration",
+					"detail": "Connects power, water, heating, monitoring, and building systems into a coherent property-level design."
+				},
+				{
+					"capability": "maintainability",
+					"detail": "Prioritizes access, isolation, monitoring, and the ability to modify systems later without destructive work."
+				},
+				{
+					"capability": "failure-mode-analysis",
+					"detail": "Considers what happens when pumps, power, storage, or heat distribution fail and how the system can be inspected or recovered."
+				}
+			],
+			"projectionHighlights": {
+				"off-grid-infrastructure-designer": [
+					"Direct example of independent infrastructure planning across power, water, heat, storage, and maintenance.",
+					"Shows a practical systems approach to property self-sufficiency."
+				],
+				"physical-systems-builder": [
+					"Connects electrical, hydronic, water, construction, and facility constraints into buildable systems."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "hangar-workshop-facility-systems",
+			"title": "Hangar and workshop facility systems",
+			"status": "In progress / ongoing planning",
+			"timeframe": "",
+			"summary": "Facility planning for a hangar/workshop involving slab use, floor coating, rooftop solar layout, radiant heating, electrical distribution, water, and long-term maintainability.",
+			"problem": "A hangar/workshop is not just a building shell; it must support aircraft, vehicles, tools, heat, power, coatings, water, solar, and future work habits.",
+			"solution": "Plan the facility as a maintainable technical workspace with attention to load paths, floor durability, hydronic zoning, solar mounting, electrical routing, and service access.",
+			"domains": [
+				"facility-systems",
+				"construction",
+				"solar",
+				"hydronic-systems",
+				"electrical-systems"
+			],
+			"capabilities": [
+				"infrastructure-planning",
+				"energy-system-design",
+				"electrical-planning",
+				"maintainability",
+				"failure-mode-analysis",
+				"mechanical-systems",
+				"systems-integration"
+			],
+			"tags": [
+				"hangar",
+				"workshop",
+				"radiant slab",
+				"floor coating",
+				"PV layout",
+				"subpanels",
+				"service access"
+			],
+			"evidence": [
+				{
+					"capability": "infrastructure-planning",
+					"detail": "Coordinated workshop use, aircraft storage, rooftop PV, slab/floor coating needs, heat, power, and long-term serviceability."
+				},
+				{
+					"capability": "energy-system-design",
+					"detail": "Evaluated solar panel layouts, orientation, roof pitch, wind/snow/load considerations, and mounting tradeoffs."
+				},
+				{
+					"capability": "maintainability",
+					"detail": "Favored designs that allow monitoring, later changes, access, and repair without burying avoidable complexity."
+				}
+			],
+			"projectionHighlights": {
+				"physical-systems-builder": [
+					"Shows practical planning for a working technical facility, not just a finished building.",
+					"Combines structure, power, heating, surface durability, and workspace operations."
+				],
+				"off-grid-infrastructure-designer": [
+					"Relevant to solar, distributed power, heat, and serviceable building systems."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "vehicle-transformation-and-diagnostics",
+			"title": "Vehicle transformation and diagnostics",
+			"status": "Ongoing interest / project work",
+			"timeframe": "",
+			"summary": "Automotive and diesel work involving diagnostics, repair planning, vehicle transformation, salvage evaluation, engine systems, CAN/JTAG/firmware research concepts, and practical mechanical execution.",
+			"problem": "Vehicle projects often involve mixed mechanical, electrical, sensor, software, structural, and cost-risk problems.",
+			"solution": "Use diagnostic thinking, staged repair planning, maximum-bid discipline, parts/risk assessment, and systems-level understanding before committing money or labor.",
+			"domains": [
+				"vehicles",
+				"vehicle-diagnostics",
+				"electrical-systems",
+				"field-systems"
+			],
+			"capabilities": [
+				"diagnostic-thinking",
+				"repair-planning",
+				"mechanical-systems",
+				"electrical-planning",
+				"failure-mode-analysis",
+				"systems-integration",
+				"hardware-software-integration"
+			],
+			"tags": [
+				"diesel",
+				"diagnostics",
+				"ECU",
+				"CAN",
+				"JTAG",
+				"salvage evaluation",
+				"repair planning",
+				"vehicle transformation"
+			],
+			"evidence": [
+				{
+					"capability": "diagnostic-thinking",
+					"detail": "Works across symptoms that may originate in mechanical damage, wiring, sensors, control logic, or configuration."
+				},
+				{
+					"capability": "repair-planning",
+					"detail": "Evaluates repair difficulty, likely hidden damage, parts cost, structural risk, and whether a project is worth pursuing."
+				},
+				{
+					"capability": "hardware-software-integration",
+					"detail": "Researches ECU development paths, OEM reference logging, supervisor piggybacking, subsystem control, and injector driver architecture."
+				}
+			],
+			"projectionHighlights": {
+				"physical-systems-builder": [
+					"Shows practical repair and transformation planning across mechanical, electrical, and structural layers."
+				],
+				"embedded-field-systems-builder": [
+					"Connects vehicle diagnostics with control systems, CAN-style communication, firmware concepts, and sensor behavior."
+				],
+				"cross-disciplinary-systems-builder": [
+					"Good example of software-like debugging applied to physical machines."
+				]
+			},
+			"media": [],
+			"links": []
+		},
+		{
+			"id": "rwlock-policy-design",
+			"title": "Reader/writer lock policy design",
+			"status": "Conceptual design",
+			"timeframe": "",
+			"summary": "Design exploration of reader/writer lock variants with different fairness, batching, writer-priority, and interleaving policies.",
+			"problem": "A single generic RW lock does not communicate the fairness and starvation tradeoffs required by different workloads.",
+			"solution": "Defined use-case-specific lock concepts such as Zipper-style interleaving and WriterPriority behavior so developers can choose based on policy, not just type name.",
+			"domains": [
+				"software",
+				"programming-language-design"
+			],
+			"capabilities": [
+				"concurrency-design",
+				"language-semantics",
+				"regression-test-thinking",
+				"system-architecture"
+			],
+			"tags": [
+				"RW lock",
+				"concurrency",
+				"fairness",
+				"writer priority",
+				"reader batching",
+				"ZipperRwLock"
+			],
+			"evidence": [
+				{
+					"capability": "concurrency-design",
+					"detail": "Explored reader batching, writer interleaving, writer priority, starvation risk, and workload-specific lock semantics."
+				},
+				{
+					"capability": "language-semantics",
+					"detail": "Focused on names and APIs that communicate policy clearly instead of hiding critical behavior behind a generic abstraction."
+				}
+			],
+			"projectionHighlights": {
+				"programming-language-designer": [
+					"Shows attention to semantics, naming, and developer-facing clarity around concurrency primitives."
+				],
+				"software-systems-architect": [
+					"Shows willingness to design multiple explicit tools rather than force one abstraction across incompatible use cases."
+				]
+			},
+			"media": [],
+			"links": []
+		}
+	],
+	"consulting": {
+		"goodFit": [
+			"Architecture reviews",
+			"Technical due diligence",
+			"System redesign planning",
+			"Backend workflow design",
+			"Ledger and payment system review",
+			"Embedded monitoring concepts",
+			"Prototype design",
+			"Cross-disciplinary technical problem solving",
+			"Failure-mode review before expensive implementation",
+			"Practical planning for systems that combine software, hardware, machines, and infrastructure"
+		],
+		"poorFit": [
+			"Pure staff-augmentation coding with no design authority",
+			"Highly bureaucratic environments that do not want assumptions challenged",
+			"Projects where correctness is less important than appearances",
+			"Work that requires pretending unrelated symptoms are unrelated when they are probably part of one system"
+		],
+		"engagementNotes": [
+			"I am self-employed and not looking for a traditional job.",
+			"I am open to selective consulting where direct technical judgment and system-level thinking are useful.",
+			"I am most useful when the problem is messy, cross-disciplinary, and expensive to get wrong."
+		]
+	},
+	"contact": {
+		"preferred": "By introduction or direct inquiry",
+		"email": "sl@aggati.com",
+		"website": "",
+		"github": "https://github.com/slisznia",
+		"notes": [
+			"Fill in the website once hosted."
+		]
+	}
+}
