@@ -140,11 +140,17 @@ export interface Consulting {
   engagementNotes?: string[]
 }
 
+export interface ContactPhoto {
+  src: string
+  alt: string
+}
+
 export interface Contact {
   preferred?: string
   email?: string
   website?: string
   github?: string
   linkedin?: string
+  photo?: ContactPhoto
   notes?: string[]
 }

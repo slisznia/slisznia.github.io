@@ -61,7 +61,7 @@
 		],
 		"hero": {
 			"title": "I build systems that have to survive contact with reality.",
-			"body": "I like projects where the pieces affect each other: software tied to business rules, sensors tied to field conditions, aircraft systems tied to wiring and workmanship, infrastructure tied to power, water, and long-term maintenance. That is where I do my best work.",
+			"body": "I like projects where many pieces affect each other: software tied to business rules, sensors tied to field conditions, aircraft and automation systems tied to wiring and workmanship, infrastructure tied to utilities and long-term maintenance. That is where I do my best work.",
 			"tags": [
 				"Systems architecture",
 				"Financial correctness",
@@ -1121,6 +1121,10 @@
 		"email": "sl@aggati.com",
 		"website": "",
 		"github": "https://github.com/slisznia",
+		"photo": {
+			"src": "/media/slawomir-lisznianski.jpg",
+			"alt": "Sławomir Liszniański"
+		},
 		"notes": [
 			"Fill in the website once hosted."
 		]
