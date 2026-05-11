@@ -3,6 +3,10 @@ dist
 dist-ssr
 *.local
 
+# just dev runtime
+.dev.pid
+.dev.log
+
 # Editor
 .vscode/*
 !.vscode/extensions.json
@@ -23,3 +27,4 @@ lerna-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+.claude-session
