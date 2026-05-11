@@ -107,8 +107,9 @@ export interface ProjectEvidence {
 export interface MediaItem {
   type: string
   src: string
-  alt?: string
+  title?: string
   caption?: string
+  alt?: string
 }
 
 export interface LinkItem {

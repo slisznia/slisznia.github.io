@@ -77,7 +77,7 @@
 			"home": {
 				"tour": {
 					"heading": "A quick tour",
-					"body": "My work has crossed a few different lanes. This site reflects that. Browse everything as one big picture, or choose a focused lens based on what brought you here."
+					"body": "My work has crossed many different lanes. This site reflects that. Browse everything as one big picture, or choose a focused lens based on what brought you here."
 				},
 				"projectionsSection": {
 					"heading": "Projections",
@@ -300,7 +300,7 @@
 		{
 			"id": "avionics",
 			"label": "Avionics",
-			"description": "Aircraft electrical, data-bus, instrument, and integration work."
+			"description": "Aircraft electrical, CAN bus, instrument, and integration work."
 		},
 		{
 			"id": "vehicles",
@@ -436,8 +436,8 @@
 		},
 		{
 			"id": "canbus-debugging",
-			"label": "CAN bus and data-bus debugging",
-			"description": "Troubleshooting data-bus style systems involving wiring, termination, devices, protocol behavior, and configuration."
+			"label": "CAN bus integration and CAN bus debugging",
+			"description": "Troubleshooting CAN bus style systems involving wiring, termination, devices, protocol behavior, and configuration."
 		},
 		{
 			"id": "failure-mode-analysis",
@@ -666,12 +666,18 @@
 		},
 		{
 			"id": "drift-programming-language-design",
-			"title": "Programming language and package system design",
-			"status": "Active design",
-			"timeframe": "",
-			"summary": "Design work around language syntax, lambda behavior, package identity, namespace trust, trait resolution, Copy/Clone semantics, explicit casts, and compiler-facing metadata.",
-			"problem": "A language and package ecosystem needs rules that remain predictable across packages, generics, traits, aliases, visibility, and dependency boundaries.",
-			"solution": "Developed decisions around package-scoped identity, trusted namespaces, local dependency caches, single-version package resolution, explicit cast syntax, lambda syntax, receiver lookup, and regression tests.",
+			"title": "Drift — a systems programming language",
+			"status": "Active design and implementation",
+			"timeframe": "Ongoing",
+			"summary": "A systems language that combines C++-style deterministic resource management with Rust-like ownership rules, in syntax that stays compact and readable. The project covers the language specification, compiler toolchain (Drift → DMIR → LLVM), standard library, and signed-module package system.",
+			"problem": "Systems programming usually forces a choice. High-level languages are pleasant but slow when you push the limits, often hiding cost behind a garbage collector. Low-level languages are fast but spend the programmer's attention on raw pointers, pointer arithmetic, manual ownership tracking, and concurrency models that don't compose. Teams end up swapping languages mid-stack, writing performance-critical code in something they don't fully trust, or fighting a borrow checker as much as the problem itself. Drift exists to refuse that binary: one language that holds up across the whole performance spectrum, with safety as the default and low-level control available only when you deliberately reach for it.",
+			"solution": "Design decisions that interlock rather than fight each other: explicit ownership and deterministic destruction (RAII) instead of GC; move-by-default with explicit copies and a Copy trait restricted to genuinely cheap types; traits and interfaces that compile down to what you would hand-write; virtual-thread concurrency with structured scopes so synchronous-looking code scales over a lightweight scheduler without async coloring; FFI through precise binary layouts and opaque ABI handles instead of pointer arithmetic; and cryptographically signed compiled modules so imports can be verified across machines. Escape hatches (lang.abi, lang.internals, @unsafe) exist but you have to ask for them by name. The compiler lowers Drift to DMIR (an SSA-based mid-level IR) and then to LLVM IR for code generation.",
+			"outcomes": [
+				"Published language specification covering syntax, semantics, ownership, traits, generics, error handling, and concurrency.",
+				"Working Drift → DMIR → LLVM toolchain prototype with end-to-end test programs.",
+				"Standard library covering strings, collections, IO, error handling, virtual threads, and process spawning.",
+				"Package and module system with signed artifacts, deterministic offline builds, and project-local dependency caches."
+			],
 			"domains": [
 				"programming-language-design",
 				"software"
@@ -686,43 +692,163 @@
 			],
 			"tags": [
 				"Drift",
-				"compiler-design",
+				"systems-language",
+				"RAII",
+				"ownership",
 				"traits",
-				"package identity",
-				"TOFU",
-				"dependency resolution",
-				"Copy semantics",
-				"lambda syntax"
+				"virtual-threads",
+				"DMIR",
+				"LLVM",
+				"signed-modules",
+				"compiler-design",
+				"package-design"
 			],
 			"evidence": [
 				{
-					"capability": "package-system-design",
-					"detail": "Defined drift-sources.json as the canonical repository directory and kept project-local dependency isolation as the default."
+					"capability": "language-semantics",
+					"detail": "Explicit cast<T>(expr) instead of implicit coercion; keyword boolean operators (and/or/not); move-by-default with implicit moves only in consuming positions; Copy restricted to cheap types so duplication cost stays visible at the call site."
 				},
 				{
 					"capability": "type-system-design",
-					"detail": "Worked through cross-package trait identity, visibility, alias canonicalization, metadata requirements, and deduplication rules."
+					"detail": "Cross-package trait identity, alias canonicalization, visibility rules, and deduplication so generic resolution stays predictable when types and traits flow across package boundaries."
 				},
 				{
-					"capability": "language-semantics",
-					"detail": "Chose explicit function-form casts, keyword-oriented syntax, explicit receiver lookup, and cheap-only Copy semantics."
+					"capability": "concurrency-design",
+					"detail": "Virtual threads with structured scopes (conc.scope, scope.spawn, .join) so synchronous-looking code scales over an epoll-based scheduler without forcing async coloring or callback rewrites."
+				},
+				{
+					"capability": "package-system-design",
+					"detail": "Project-local dependency caches, single-version resolution per build, cryptographically signed compiled modules, and a canonical repository directory (drift-sources.json) — so builds stay reproducible and supply-chain trust is verifiable."
 				},
 				{
 					"capability": "regression-test-thinking",
-					"detail": "Turns design decisions into concrete tests to guard against semantic drift."
+					"detail": "Design decisions land alongside the test cases that pin their behavior. Semantic drift between revisions is caught at CI rather than by the next user."
 				}
 			],
 			"projectionHighlights": {
 				"programming-language-designer": [
-					"Shows deep design work on language semantics, package systems, visibility, and trait resolution.",
-					"Emphasizes simple, explicit rules over clever but fragile syntax."
+					"Refuses the high-level-vs-low-level binary: safety is the default, and low-level control is opt-in by name.",
+					"Whole-stack design from surface syntax through DMIR and LLVM codegen, with the package and trust model worked out at the same level of care."
 				],
 				"software-systems-architect": [
-					"Demonstrates architecture-level thinking about versioning, dependency isolation, trust, metadata, and compatibility."
+					"Architecture-level decisions about versioning, dependency isolation, supply-chain trust, and reproducible builds — applied to a language ecosystem rather than a service stack."
 				]
 			},
 			"media": [],
-			"links": []
+			"links": [
+				{
+					"label": "drift-foundation/lang-toolchain on GitHub",
+					"href": "https://github.com/drift-foundation/lang-toolchain"
+				},
+				{
+					"label": "Drift language specification",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-lang-spec.md"
+				},
+				{
+					"label": "Tooling and packages design",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-tooling-and-packages.md"
+				},
+				{
+					"label": "Concurrency design",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-concurrency.md"
+				}
+			]
+		},
+		{
+			"id": "drift-stdlib-and-runtime",
+			"title": "Drift standard library and POSIX runtime",
+			"status": "Active design and implementation",
+			"timeframe": "Ongoing",
+			"summary": "The standard library that ships with Drift, plus the systems substrate underneath it: virtual-thread concurrency and structured scopes, lock-free synchronization primitives, core containers, and a POSIX runtime (x86_64 Linux scheduler, epoll reactor, fiber-based context switching, nonblocking IO).",
+			"problem": "A systems language without a strong standard library is a hollow promise. Every program ends up reinventing primitives that are easy to get subtly wrong: memory ordering for atomics, queue invariants for cross-thread work shipping, safe memory reclamation in lock-free code paths, scheduler fairness under load. Either the language never becomes practical for real systems, or the ecosystem fragments into competing third-party libraries that disagree on the basics. The stdlib has to make the right choices once, so application code doesn't have to.",
+			"solution": "Four interlocking surfaces. **std.concurrent** — Executor with configurable policies (min/max threads, queue limit, saturation policy), VirtualThread<T> with join/join_timeout/cancel, Future and FutureGroup for join-all/join-any, Scope for structured concurrency, Mutex<T>/MutexGuard<T> with RAII release, ARC for shared ownership. **std.sync** — atomic cells (AtomicBool/Int/Uint/Uint64) with explicit MemoryOrder (Relaxed, Acquire, Release, AcqRel, SeqCst), AtomicHandle<T>/AtomicRef<T> for opaque atomic pointers, an MpscQueue<T> for one-shot work shipping, and epoch-based reclamation primitives (EpochDomain, EpochParticipant, retire/advance) for safe memory reclamation in lock-free code. **std.containers** — Array, Deque, HashMap, HashSet, TreeMap, TreeSet, each with both move and borrow iterators, range types, and explicit invalidation events. **POSIX runtime (x86_64 Linux)** — fibers on carrier threads via custom drift_context.S assembly, epoll reactor for nonblocking IO on files / pipes / sockets, mmap-backed fiber stacks with guard pages so stack overflow faults instead of corrupts, pidfd-based process spawning.",
+			"outcomes": [
+				"std.concurrent public surface frozen as the contract the runtime evolves against — VT lifecycle states, ConcurrencyError taxonomy, executor policy builder.",
+				"Working fiber-based scheduler on x86_64 Linux with cooperative cancellation and parking that does not block a carrier thread.",
+				"std.sync atomics, MPSC queue, and epoch-based reclamation usable from application code without dropping into @unsafe.",
+				"Container implementations with iterator traits formalized: SinglePass, MultiPass (independent cursors), Bidirectional, RandomAccessReadable/Permutable, plus IteratorInvalidated events that fire instead of silent corruption."
+			],
+			"domains": [
+				"programming-language-design",
+				"software"
+			],
+			"capabilities": [
+				"concurrency-design",
+				"system-architecture",
+				"type-system-design",
+				"failure-mode-analysis",
+				"maintainability",
+				"documentation-discipline"
+			],
+			"tags": [
+				"Drift",
+				"stdlib",
+				"virtual-threads",
+				"structured-concurrency",
+				"lock-free",
+				"atomics",
+				"memory-ordering",
+				"MPSC",
+				"epoch-reclamation",
+				"RAII",
+				"containers",
+				"iterators",
+				"POSIX",
+				"epoll",
+				"fibers",
+				"x86_64-linux"
+			],
+			"evidence": [
+				{
+					"capability": "concurrency-design",
+					"detail": "std.concurrent — Executor with configurable policies, VirtualThread<T> with join/join_timeout/cancel and a documented lifecycle (NEW→READY→RUNNING→PARKED→FINISHED/CANCELLED), Future + FutureGroup for join-all/join-any, Scope for structured concurrency, Mutex<T> with RAII guards."
+				},
+				{
+					"capability": "system-architecture",
+					"detail": "std.sync — atomic cells across Bool/Int/Uint/Uint64 with explicit MemoryOrder, AtomicHandle<T>/AtomicRef<T> for opaque atomic pointers, MpscQueue<T>, and epoch-based reclamation (EpochDomain, EpochParticipant, retire/advance) — the building blocks lock-free data structures actually need."
+				},
+				{
+					"capability": "type-system-design",
+					"detail": "Iterator trait hierarchy (SinglePass, MultiPass with independent-cursor contract, Bidirectional, RandomAccessReadable/Permutable) drives both `for` lowering and the algorithms in std.algo; containers map onto it explicitly rather than ad-hoc."
+				},
+				{
+					"capability": "failure-mode-analysis",
+					"detail": "Container operations on invalidated iterators raise IteratorInvalidated(container_id, op_id) instead of returning corrupt data; fiber stacks are mmap'd with guard pages so stack overflow faults instead of silently scribbling on the heap; epoll reactor parks VTs without blocking the carrier thread."
+				},
+				{
+					"capability": "documentation-discipline",
+					"detail": "std.concurrent and std.sync are written down as a contract — frozen public surface, documented state machines, runtime-target boundaries (x86_64 Linux only, with a planned target-triple-based gate before adding ARM)."
+				}
+			],
+			"projectionHighlights": {
+				"programming-language-designer": [
+					"The standard library that ships with a language is the language — concurrency, lock-free primitives, containers, and the systems substrate are the part most users actually feel.",
+					"Iterator traits and container invalidation events are part of the language's contract with users, not an afterthought."
+				],
+				"software-systems-architect": [
+					"Scheduler design, lock-free queueing, epoch-based reclamation, and structured concurrency — the building blocks of any nontrivial concurrent system, designed once rather than reinvented per program.",
+					"Runtime-target boundaries treated as an explicit contract: host vs. target distinction, planned move to target-triple-based selection before adding architectures."
+				]
+			},
+			"media": [],
+			"links": [
+				{
+					"label": "Standard library spec",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-stdlib-spec.md"
+				},
+				{
+					"label": "Concurrency design",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-concurrency.md"
+				},
+				{
+					"label": "Runtime target support",
+					"href": "https://github.com/drift-foundation/lang-toolchain/blob/main/docs/design/drift-runtime-targets.md"
+				},
+				{
+					"label": "stdlib source on GitHub",
+					"href": "https://github.com/drift-foundation/lang-toolchain/tree/main/stdlib"
+				}
+			]
 		},
 		{
 			"id": "esp32-water-level-monitor",
@@ -787,10 +913,10 @@
 		},
 		{
 			"id": "rv10-experimental-aircraft-build",
-			"title": "RV-10 experimental aircraft build",
-			"status": "In progress",
+			"title": "Experimental aircraft build",
+			"status": "Completed",
 			"timeframe": "",
-			"summary": "Experimental aircraft build requiring structural assembly, metal fabrication, systems integration, wiring, avionics/data-bus troubleshooting, upholstery/interior work, documentation, and safety-critical workmanship.",
+			"summary": "Experimental aircraft build requiring structural assembly, metal fabrication, systems integration, wiring, avionics/CAN bus troubleshooting, upholstery/interior work, documentation, and safety-critical workmanship.",
 			"problem": "An aircraft build is a long-horizon systems project where structure, controls, fuel, electrical, avionics, interior, inspection, documentation, and workmanship all affect the final result.",
 			"solution": "Approach the build as an integrated system: controlled workmanship, careful documentation, staged assembly, inspection mindset, and debugging across mechanical and electrical layers.",
 			"domains": [
@@ -833,7 +959,7 @@
 				},
 				{
 					"capability": "canbus-debugging",
-					"detail": "Involves avionics/data-bus troubleshooting where wiring, termination, configuration, and device behavior interact."
+					"detail": "Involves avionics/CAN bus troubleshooting where wiring, termination, configuration, and device behavior interact."
 				},
 				{
 					"capability": "long-horizon-project-execution",
@@ -850,14 +976,50 @@
 					"Shows practical execution across mechanical, electrical, interior, and documentation work."
 				],
 				"embedded-field-systems-builder": [
-					"Avionics/data-bus debugging connects wiring, protocol behavior, device configuration, and physical installation details.",
+					"Avionics/CAN bus debugging connects wiring, protocol behavior, device configuration, and physical installation details.",
 					"Shows troubleshooting across hardware, software-like configuration, and mechanical routing."
 				],
 				"cross-disciplinary-systems-builder": [
 					"A flagship example of one project acting as a soup of capabilities: fabrication, wiring, debugging, documentation, safety, and long-horizon execution."
 				]
 			},
-			"media": [],
+			"media": [
+				{
+					"type": "image",
+					"src": "/media/projects/rv10/rv10.jpg",
+					"title": "RV-10",
+					"caption": "Van's RV-10, a four-seat experimental aircraft built from a kit. The build touches structural assembly, electrical, avionics, fuel, controls, interior, and inspection across thousands of hours of work.",
+					"alt": "Van's RV-10 experimental aircraft"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/rv10/io-540-thunderbolt-engine.jpg",
+					"title": "Lycoming IO-540 Thunderbolt",
+					"caption": "Lycoming's IO-540 in Thunderbolt trim — a blueprinted, balanced, tighter-tolerance build of the standard 540-cubic-inch six. Firewall-forward layout has to keep cooling, fuel routing, and accessory placement all working together.",
+					"alt": "Lycoming IO-540 Thunderbolt engine mounted on the RV-10"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/rv10/g3x-touch-panel.jpg",
+					"title": "Garmin G3X Touch panel",
+					"caption": "Touchscreen avionics stack — PFD, MFD, engine monitoring, and autopilot interface in one set of glass. Panel layout has to balance flight ergonomics with serviceability behind the firewall.",
+					"alt": "RV-10 instrument panel with Garmin G3X Touch displays"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/rv10/panel-hookup.jpg",
+					"title": "Panel hookup",
+					"caption": "Wiring up the avionics panel behind the glass. Connector pinouts, bus separation, fuse layout, and harness routing all have to be sorted before the panel ever shows a single screen.",
+					"alt": "Avionics panel wiring during hookup"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/rv10/Lithium-LiFePO4-install-in-aircraft-custom-mount.jpg",
+					"title": "LiFePO4 battery install",
+					"caption": "Lithium iron phosphate (LiFePO4) battery on a custom-fabricated mount. Lighter than lead-acid for the same usable capacity, but the install has to account for hold-down loads, thermal management, and a BMS that plays well with the aircraft's charging system.",
+					"alt": "Custom mount holding a LiFePO4 battery installed in the RV-10"
+				}
+			],
 			"links": []
 		},
 		{

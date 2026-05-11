@@ -9,6 +9,7 @@ import {
 } from '@/lib/portfolio'
 import TagChip from '@/components/TagChip.vue'
 import EvidenceList from '@/components/EvidenceList.vue'
+import ProjectGallery from '@/components/ProjectGallery.vue'
 
 const props = defineProps<{ id: string }>()
 
@@ -90,6 +91,16 @@ const relatedProjections = computed(() =>
       </h2>
       <div class="mt-4">
         <EvidenceList :evidence="project.evidence" />
+      </div>
+    </section>
+
+    <section
+      v-if="project.media?.length"
+      class="container-narrow py-6 border-t border-ink-800"
+    >
+      <h2 class="text-sm uppercase tracking-wider text-ink-400">Gallery</h2>
+      <div class="mt-4">
+        <ProjectGallery :items="project.media" />
       </div>
     </section>
 
