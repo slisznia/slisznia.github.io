@@ -13,7 +13,7 @@
 	},
 	"person": {
 		"name": "Sławomir Liszniański",
-		"headline": "Independent systems builder",
+		"headline": "Practical systems builder",
 		"location": "Polson, Montana",
 		"status": "Self-employed; open to selective consulting",
 		"shortBio": "I design, build, debug, and improve complex systems across software, infrastructure, machines, buildings, field hardware, vehicles, and aviation.",
@@ -60,8 +60,8 @@
 			}
 		],
 		"hero": {
-			"title": "I build complex systems where failure modes matter.",
-			"body": "My work looks broad at first glance: software systems, aircraft building, off-grid infrastructure, vehicles, embedded devices, financial systems, and programming language design. The common thread is systems thinking: understanding how parts interact, where things fail, and how to build systems that survive real use.",
+			"title": "I build systems that have to survive contact with reality.",
+			"body": "I like projects where the pieces affect each other: software tied to business rules, sensors tied to field conditions, aircraft systems tied to wiring and workmanship, infrastructure tied to power, water, and long-term maintenance. That is where I do my best work.",
 			"tags": [
 				"Systems architecture",
 				"Financial correctness",
@@ -72,6 +72,37 @@
 				"Fabrication",
 				"Failure-mode thinking"
 			]
+		},
+		"copy": {
+			"home": {
+				"tour": {
+					"heading": "A quick tour",
+					"body": "My work has crossed a few different lanes. This site reflects that. Browse everything as one big picture, or choose a focused lens based on what brought you here."
+				},
+				"projectionsSection": {
+					"heading": "Projections",
+					"subhead": "Choose the angle that matches what brought you here."
+				},
+				"selectedProjectsSection": {
+					"heading": "Selected projects"
+				},
+				"consultingSection": {
+					"heading": "Consulting fit",
+					"goodFitLabel": "Good fit",
+					"poorFitLabel": "Poor fit"
+				},
+				"contactSection": {
+					"heading": "Contact"
+				}
+			},
+			"projectionsIndex": {
+				"heading": "Projections",
+				"body": "Each projection is an audience-specific view of the same body of work — a different camera angle on one cross-disciplinary practice."
+			},
+			"projectsIndex": {
+				"heading": "Projects",
+				"body": "A scannable index of every project. Filter by domain or capability if you want to narrow the view, or just skim the list."
+			}
 		}
 	},
 	"projections": [
