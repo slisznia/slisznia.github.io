@@ -19,7 +19,7 @@
 		"shortBio": "I design, build, debug, and improve complex systems across software, infrastructure, machines, buildings, field hardware, vehicles, and aviation.",
 		"positioning": "I help organizations design and fix systems where correctness, reliability, maintainability, and real-world constraints matter.",
 		"preferredEngagementStyle": [
-			"Architecture review",
+			"Software architecture",
 			"Technical due diligence",
 			"Prototype design",
 			"System redesign planning",
@@ -1255,13 +1255,12 @@
 	],
 	"consulting": {
 		"goodFit": [
-			"Architecture reviews",
+			"Software architecture of any size",
 			"Technical due diligence",
-			"System redesign planning",
-			"Backend workflow design",
-			"Ledger and payment system review",
-			"Embedded monitoring concepts",
-			"Prototype design",
+			"System redesign and refactoring",
+			"Financial ledgers (including blockchain) and payment systems",
+			"Embedded systems",
+			"Prototype hardware design",
 			"Cross-disciplinary technical problem solving",
 			"Failure-mode review before expensive implementation",
 			"Practical planning for systems that combine software, hardware, machines, and infrastructure"
@@ -1274,12 +1273,12 @@
 		],
 		"engagementNotes": [
 			"I am self-employed and not looking for a traditional job.",
-			"I am open to selective consulting where direct technical judgment and system-level thinking are useful.",
+			"I am open to selective consulting where direct technical judgment and system-level thinking are needed.",
 			"I am most useful when the problem is messy, cross-disciplinary, and expensive to get wrong."
 		]
 	},
 	"contact": {
-		"preferred": "By introduction or direct inquiry",
+		"preferred": "Preferably by introduction, but direct inquiries will not be ignored.",
 		"email": "sl@aggati.com",
 		"website": "",
 		"github": "https://github.com/slisznia",
@@ -1288,7 +1287,7 @@
 			"alt": "Sławomir Liszniański"
 		},
 		"notes": [
-			"Fill in the website once hosted."
+			"Up-to-date portfolio at https://slisznia.github.io/"
 		]
 	}
 }
