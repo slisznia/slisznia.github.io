@@ -4,6 +4,9 @@ Personal portfolio site for Sławomir Liszniański. The site presents work as a
 **capability graph**: projects are evidence, capabilities are what they prove,
 and projections are audience-specific lenses over the same body of work.
 
+Live at **<https://slisznia.github.io/>**. Pushes to `main` build and deploy
+automatically via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
 The full project specification lives in [`doc/portfolio_project_spec.md`](doc/portfolio_project_spec.md).
 
 ## Stack
