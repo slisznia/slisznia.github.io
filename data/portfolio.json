@@ -1296,27 +1296,38 @@
 	"customers": [
 		{
 			"name": "Citadel Securities",
-			"logo": "/media/customers/citadel-securities.jpg"
+			"logo": "/media/customers/citadel-securities.jpg",
+			"url": "https://www.citadelsecurities.com/"
 		},
 		{
 			"name": "Chopper Trading",
-			"logo": "/media/customers/chopper.png"
+			"logo": "/media/customers/chopper.png",
+			"url": "https://www.choppertrading.com/"
+		},
+		{
+			"name": "Drift Language Foundation",
+			"logo": "/media/customers/drift-foundation.png",
+			"url": "https://github.com/drift-foundation/lang-toolchain"
 		},
 		{
 			"name": "The Options Clearing Corporation",
-			"logo": "/media/customers/the-options-clearing-corp.png"
+			"logo": "/media/customers/the-options-clearing-corp.png",
+			"url": "https://www.theocc.com/"
 		},
 		{
 			"name": "Tellabs",
-			"logo": "/media/customers/tellabs.png"
+			"logo": "/media/customers/tellabs.png",
+			"url": "https://tellabs.com/"
 		},
 		{
 			"name": "Nortel Networks",
-			"logo": "/media/customers/nortel-networks.png"
+			"logo": "/media/customers/nortel-networks.png",
+			"url": "https://en.wikipedia.org/wiki/Nortel"
 		},
 		{
 			"name": "PushCoin",
-			"logo": "/media/customers/pushcoin.png"
+			"logo": "/media/customers/pushcoin.svg",
+			"url": "https://www.pushcoin.com/"
 		}
 	]
 }

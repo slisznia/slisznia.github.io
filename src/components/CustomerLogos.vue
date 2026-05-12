@@ -17,7 +17,10 @@ defineProps<{
         :rel="c.url ? 'noopener noreferrer' : undefined"
         :title="c.name"
         :aria-label="c.name"
-        class="inline-flex items-center opacity-80 hover:opacity-100 transition-opacity"
+        :class="[
+          'inline-flex items-center',
+          c.url ? 'opacity-90 hover:opacity-100 transition-opacity' : '',
+        ]"
       >
         <img
           :src="assetUrl(c.logo)"
