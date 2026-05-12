@@ -10,6 +10,13 @@ export interface Portfolio {
   projects: Project[]
   consulting: Consulting
   contact: Contact
+  customers?: Customer[]
+}
+
+export interface Customer {
+  name: string
+  logo: string
+  url?: string
 }
 
 export interface PortfolioMetadata {
@@ -55,6 +62,7 @@ export interface SiteCopy {
     selectedProjectsSection: HeadingBlock
     consultingSection: ConsultingSectionCopy
     contactSection: HeadingBlock
+    customersSection?: HeadingBlock
   }
   projectionsIndex: HeadingBlock
   projectsIndex: HeadingBlock

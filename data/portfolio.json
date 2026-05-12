@@ -87,12 +87,15 @@
 					"heading": "Selected projects"
 				},
 				"consultingSection": {
-					"heading": "Consulting fit",
+					"heading": "Consulting",
 					"goodFitLabel": "Good fit",
 					"poorFitLabel": "Poor fit"
 				},
 				"contactSection": {
 					"heading": "Contact"
+				},
+				"customersSection": {
+					"heading": "Past customers"
 				}
 			},
 			"projectionsIndex": {
@@ -1289,5 +1292,31 @@
 		"notes": [
 			"Up-to-date portfolio at https://slisznia.github.io/"
 		]
-	}
+	},
+	"customers": [
+		{
+			"name": "Citadel Securities",
+			"logo": "/media/customers/citadel-securities.jpg"
+		},
+		{
+			"name": "Chopper Trading",
+			"logo": "/media/customers/chopper.png"
+		},
+		{
+			"name": "The Options Clearing Corporation",
+			"logo": "/media/customers/the-options-clearing-corp.png"
+		},
+		{
+			"name": "Tellabs",
+			"logo": "/media/customers/tellabs.png"
+		},
+		{
+			"name": "Nortel Networks",
+			"logo": "/media/customers/nortel-networks.png"
+		},
+		{
+			"name": "PushCoin",
+			"logo": "/media/customers/pushcoin.png"
+		}
+	]
 }

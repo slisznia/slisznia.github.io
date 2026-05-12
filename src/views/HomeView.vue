@@ -4,6 +4,7 @@ import { portfolio } from '@/lib/content'
 import { assetUrl, sortedProjections } from '@/lib/portfolio'
 import ProjectionCard from '@/components/ProjectionCard.vue'
 import ProjectRow from '@/components/ProjectRow.vue'
+import CustomerLogos from '@/components/CustomerLogos.vue'
 
 const hero = portfolio.site.hero
 const copy = portfolio.site.copy.home
@@ -69,7 +70,7 @@ const featuredProjects = computed(() => portfolio.projects.slice(0, 4))
     </div>
   </section>
 
-  <section class="container-narrow py-10 border-t border-ink-800">
+  <section id="consulting" class="container-narrow py-10 border-t border-ink-800">
     <h2 class="text-xl font-semibold text-ink-50">{{ copy.consultingSection.heading }}</h2>
     <div class="mt-5 grid gap-6 md:grid-cols-2">
       <div>
@@ -137,6 +138,21 @@ const featuredProjects = computed(() => portfolio.projects.slice(0, 4))
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section
+    v-if="portfolio.customers?.length"
+    class="container-narrow py-10 border-t border-ink-800"
+  >
+    <h2
+      v-if="copy.customersSection"
+      class="text-sm uppercase tracking-wider text-ink-400"
+    >
+      {{ copy.customersSection.heading }}
+    </h2>
+    <div class="mt-5">
+      <CustomerLogos :customers="portfolio.customers" />
     </div>
   </section>
 </template>

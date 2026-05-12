@@ -26,6 +26,11 @@ body::before {
   opacity: 0.25;
 }
 
+/* Offset anchor-target scroll position so the sticky header doesn't cover the heading. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 @layer utilities {
   .container-narrow {
     max-width: 64rem;

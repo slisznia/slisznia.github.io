@@ -45,7 +45,9 @@ export const router = createRouter({
   routes,
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) return savedPosition
-    if (to.hash) return { el: to.hash, behavior: 'smooth' }
+    // top: 80 leaves room for the sticky header (~60-65px) so the section heading
+    // doesn't sit under it. Adjust if the header height changes.
+    if (to.hash) return { el: to.hash, top: 80 }
     return { top: 0 }
   },
 })
