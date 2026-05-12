@@ -82,3 +82,13 @@ export function domainLabel(portfolio: Portfolio, id: string): string {
 export function capabilityLabel(portfolio: Portfolio, id: string): string {
   return findCapability(portfolio, id)?.label ?? id
 }
+
+// Prefix a JSON-supplied asset path with the app's base URL so it works
+// both at the site root (dev: '/') and under a subpath (prod: '/bio/').
+// External URLs (http/https/data:) are passed through unchanged.
+export function assetUrl(path: string | undefined | null): string {
+  if (!path) return ''
+  if (/^(https?:)?\/\//.test(path) || path.startsWith('data:')) return path
+  const base = import.meta.env.BASE_URL // always ends with '/'
+  return base + path.replace(/^\/+/, '')
+}

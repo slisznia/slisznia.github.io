@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { portfolio } from '@/lib/content'
-import { sortedProjections } from '@/lib/portfolio'
+import { assetUrl, sortedProjections } from '@/lib/portfolio'
 import ProjectionCard from '@/components/ProjectionCard.vue'
 import ProjectRow from '@/components/ProjectRow.vue'
 
@@ -111,7 +111,7 @@ const featuredProjects = computed(() => portfolio.projects.slice(0, 4))
     <div class="mt-5 flex flex-col sm:flex-row sm:items-center gap-6">
       <img
         v-if="portfolio.contact.photo"
-        :src="portfolio.contact.photo.src"
+        :src="assetUrl(portfolio.contact.photo.src)"
         :alt="portfolio.contact.photo.alt"
         class="h-32 w-32 rounded-full object-cover border border-ink-800 shrink-0"
         loading="lazy"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import type { MediaItem } from '@/types/portfolio'
+import { assetUrl } from '@/lib/portfolio'
 
 const props = defineProps<{
   items: MediaItem[]
@@ -70,7 +71,7 @@ onBeforeUnmount(() => {
         >
           <div class="aspect-[4/3] bg-ink-900 overflow-hidden">
             <img
-              :src="item.src"
+              :src="assetUrl(item.src)"
               :alt="item.alt ?? item.title ?? ''"
               class="h-full w-full object-cover group-hover:opacity-90 transition-opacity"
               loading="lazy"
@@ -115,7 +116,7 @@ onBeforeUnmount(() => {
           </button>
 
           <img
-            :src="activeItem.src"
+            :src="assetUrl(activeItem.src)"
             :alt="activeItem.alt ?? activeItem.title ?? ''"
             class="max-h-full max-w-full object-contain"
             @click.stop
