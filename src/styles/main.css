@@ -23,7 +23,7 @@ body::before {
   background-image: url('/media/bg-dark.jpg');
   background-repeat: no-repeat;
   background-position: top center;
-  opacity: 0.25;
+  opacity: 0.10;
 }
 
 /* Offset anchor-target scroll position so the sticky header doesn't cover the heading. */
