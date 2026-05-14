@@ -75,7 +75,7 @@ export interface NavItem {
 
 export interface Hero {
   title: string
-  body: string
+  body: string | string[]
   tags: string[]
 }
 

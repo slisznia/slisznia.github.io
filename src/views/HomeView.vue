@@ -7,6 +7,9 @@ import ProjectRow from '@/components/ProjectRow.vue'
 import CustomerLogos from '@/components/CustomerLogos.vue'
 
 const hero = portfolio.site.hero
+const heroParagraphs = computed(() =>
+  Array.isArray(hero.body) ? hero.body : [hero.body],
+)
 const copy = portfolio.site.copy.home
 const person = portfolio.person
 const projections = computed(() => sortedProjections(portfolio))
@@ -18,13 +21,13 @@ const featuredProjects = computed(() => portfolio.projects.slice(0, 4))
     <p class="text-sm uppercase tracking-wider text-ink-400">
       {{ person.headline }}
     </p>
-    <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-ink-50">
+    <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-ink-50">
       {{ hero.title }}
     </h1>
     <blockquote
-      class="mt-6 border-l-2 border-ink-600 pl-5 text-lg italic text-ink-200 leading-relaxed"
+      class="mt-6 border-l-2 border-ink-600 pl-5 text-lg italic text-ink-200 leading-relaxed space-y-4"
     >
-      {{ hero.body }}
+      <p v-for="(para, i) in heroParagraphs" :key="i">{{ para }}</p>
     </blockquote>
   </section>
 

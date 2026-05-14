@@ -60,8 +60,11 @@
 			}
 		],
 		"hero": {
-			"title": "I build systems that have to survive contact with reality.",
-			"body": "I like projects where many pieces affect each other: software tied to business rules, sensors tied to field conditions, aircraft and automation systems tied to wiring and workmanship, infrastructure tied to utilities and long-term maintenance. That is where I do my best work.",
+			"title": "I build practical systems for people who still want to own their tools, infrastructure, and data.",
+			"body": [
+				"I believe the Internet should make small teams, independent builders, and local organizations more capable — not more dependent on a few global platforms. AI and modern tooling make that vision practical again.",
+				"That is why my work crosses software, hardware, automation, aircraft, vehicles, energy, water, and infrastructure. Real independence is not just an app. It is the whole system: self-hosted software, durable infrastructure, embedded devices, automation, and physical systems that keep working when the cloud is not the whole answer."
+			],
 			"tags": [
 				"Systems architecture",
 				"Financial correctness",
@@ -76,7 +79,7 @@
 		"copy": {
 			"home": {
 				"tour": {
-					"heading": "A quick tour",
+					"heading": "How this works",
 					"body": "My work has crossed many different lanes. This site reflects that. Browse everything as one big picture, or choose a focused lens based on what brought you here."
 				},
 				"projectionsSection": {
