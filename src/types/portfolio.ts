@@ -134,6 +134,7 @@ export interface Project {
   problem?: string
   solution?: string
   outcomes?: string[]
+  roadmap?: string[]
   domains: string[]
   capabilities: string[]
   tags?: string[]

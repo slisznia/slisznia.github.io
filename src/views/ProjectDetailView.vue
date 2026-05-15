@@ -83,6 +83,18 @@ const relatedProjections = computed(() =>
     </section>
 
     <section
+      v-if="project.roadmap?.length"
+      class="container-narrow py-6 border-t border-ink-800"
+    >
+      <h2 class="text-sm uppercase tracking-wider text-ink-400">What's next</h2>
+      <ul class="mt-3 space-y-2">
+        <li v-for="(item, i) in project.roadmap" :key="i" class="text-ink-200 text-sm">
+          — {{ item }}
+        </li>
+      </ul>
+    </section>
+
+    <section
       v-if="project.evidence?.length"
       class="container-narrow py-6 border-t border-ink-800"
     >

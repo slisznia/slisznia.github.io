@@ -905,6 +905,9 @@
 					"detail": "Added simulation/test-populate behavior that does not overwrite real persistent data."
 				}
 			],
+			"roadmap": [
+				"LoRa radio for off-Wi-Fi telemetry paired with deep-sleep low-power operation. Lets the device sit anywhere the cistern does — not just within Wi-Fi range — and run for months on a single battery."
+			],
 			"projectionHighlights": {
 				"embedded-field-systems-builder": [
 					"Practical embedded field device with calibration, logging, BLE interaction, and compact operator-readable output.",
@@ -914,7 +917,36 @@
 					"Connects water infrastructure with monitoring, historical visibility, and low-maintenance field behavior."
 				]
 			},
-			"media": [],
+			"media": [
+				{
+					"type": "image",
+					"src": "/media/projects/esp32-water-level-monitor/bench-prototype.jpg",
+					"title": "Bench prototype",
+					"caption": "ESP32 paired with an LM2596 buck converter on the bench. Sensor reads, BLE behavior, and persistent storage all validated before anything goes into the field.",
+					"alt": "ESP32 development board and LM2596 buck converter on a breadboard, bench setup"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/esp32-water-level-monitor/cistern-install.jpg",
+					"title": "Cistern install",
+					"caption": "The water tank going into the ground, with the utility/valve box in the foreground. The level monitor lives in the box, reading the cistern via a resistance-style probe.",
+					"alt": "Large white plastic water cistern being installed in an excavated pit with a concrete valve box in the foreground"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/esp32-water-level-monitor/water-manifold.jpg",
+					"title": "Plumbing manifold",
+					"caption": "Inside the valve box: PVC manifold routing the cistern, well, and downstream lines through labeled ball valves. The monitor reports level, refills, and rolling statistics over BLE.",
+					"alt": "PVC plumbing manifold with red-handled ball valves inside a concrete utility box"
+				},
+				{
+					"type": "image",
+					"src": "/media/projects/esp32-water-level-monitor/web-dashboard.jpg",
+					"title": "Live dashboard",
+					"caption": "Current level, refill history, and rolling 24-hour / 3-day / 7-day / 30-day statistics. Auto-refresh every 60 seconds; data sourced from the device's compact JSON reports.",
+					"alt": "Web dashboard showing 87% water level, a time-series chart of fills and consumption, and a statistics table"
+				}
+			],
 			"links": []
 		},
 		{
